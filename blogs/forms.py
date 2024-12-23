@@ -8,3 +8,10 @@ class PostForm(forms.ModelForm):
         model = BlogPost
         fields = ['title', 'text']
         labels = {'title': 'Заголовок', 'text':'Текст'}
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'text': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 5,  # Увеличить высоту поля
+            }),
+        }
